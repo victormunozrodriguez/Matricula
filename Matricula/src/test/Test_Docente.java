@@ -1,0 +1,35 @@
+package test;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import model.Docente;
+
+public class Test_Docente {
+	EntityManagerFactory emf = Persistence.createEntityManagerFactory("Matricula");
+	EntityManager em = emf.createEntityManager();
+	
+	public Test_Docente() {}
+		
+		public void Insertar_Docente() {
+			Docente insertarDocente = new Docente();
+			insertarDocente.setCod_docente(1);
+			insertarDocente.setNombres("Jose");
+			insertarDocente.setApellidos("Alvarado");
+			insertarDocente.setDni("12345678");
+			insertarDocente.setTelefono("987654321");
+			
+			em.getTransaction().begin();
+			em.persist(insertarDocente);
+			em.getTransaction().commit();
+			
+			
+		}
+	public static void main (String[] args) {
+		Test_Docente test_Docente = new Test_Docente();
+		test_Docente.Insertar_Docente();
+	}
+
+}
+
