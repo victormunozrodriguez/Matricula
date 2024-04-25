@@ -17,10 +17,6 @@ public class Test_Curso {
 			insertarCurso.setCod_curso(1);
 			insertarCurso.setNombre("Matematicas");
 			insertarCurso.setCredito("5");
-			insertarCurso.setCod_curso(3);
-			insertarCurso.setNombre("software");
-			insertarCurso.setCredito("6");
-		
 		
 			em.getTransaction().begin();
 			em.persist(insertarCurso);
